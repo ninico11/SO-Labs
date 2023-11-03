@@ -1,6 +1,5 @@
 org 7c00h           ; Set the origin of the program to 7c00h
 
-buffer: times 256 db 0h   ; Define a 256-byte buffer for input
 mov si, buffer            ; Initialize SI register to point to the buffer
 
 write_chr:               ; Start of the write_chr loop
@@ -109,3 +108,5 @@ clear_buffer:            ; Label for clearing the buffer
 	jne clear_buffer        ; If SI is not at the end, continue clearing
 	mov si, buffer          ; Reset SI to point to the start of the buffer
 	jmp write_chr           ; Jump back to the beginning of the write_chr loop
+
+buffer: times 256 db 0h   ; Define a 256-byte buffer for input
